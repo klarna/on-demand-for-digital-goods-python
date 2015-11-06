@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Klarna On-Demand</title>
+    </head>
+    <body>
+        <h1>Klarna Checkout Example</h1>
+        <p>This is the smallest possible integration of Klarna Checkout.</p>
+        <form action='/purchase' method='POST' class='klarna-form'
+            data-api-key='{{ api_key }}' data-flow='purchase'
+            data-locale='en' data-amount='{{ amount }}'
+            data-currency='{{ currency }}'>
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <input type='hidden' name='reference' value='allthethings' />
+            <input type='hidden' name='currency' value='{{ currency }}' />
+            <input type='hidden' name='amount' value='{{ amount }}' />
+            <input type='hidden' name='name' value='something' />
+        </form>
+        <script src='https://ondemand-dg.playground.klarna.com/web/js/sdk.min.js'>
+        </script>
+        <script>
+            var onKlarnaSuccess = function(data) {
+                alert('Payment status: ' +  data.status);
+            };
+        </script>
+    </body>
+</html>
