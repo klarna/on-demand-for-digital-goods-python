@@ -2,7 +2,7 @@
 On demand for digital goods. Simple example in Python.
 
 ## To run it:
-virtualenv --no-site-packages venv
-source venv/bin/activate
-pip install -r requirements.txt
-python run.py
+virtualenv --no-site-packages venv </br>
+source venv/bin/activate </br>
+pip install -r requirements.txt </br>
+python run.py </br>
